@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MainPageLM</string>
+    <string name="limited_text">Предложение ограничено</string>
+    <string name="best_price_text">Лучшая цена</string>
+    <string name="search_items_title">Поиск товаров</string>
+    <string name="catalog_text_title">Каталог</string>
+    <string name="price_example_text">120</string>
+    <string name="ruble_value_text">₽/шт</string>
+    <string name="item_title">Название товара и прочеее</string>
+    <string name="more_text">Смотреть всё</string>
+    <string name="title_text">Название</string>
+</resources>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:background="@color/green">
+
+            <TextView
+                android:id="@+id/search_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/simple_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:text="@string/search_items_title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/large_text_size"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/simple_margin"
+                android:layout_marginTop="@dimen/simple_margin"
+                android:layout_marginEnd="@dimen/simple_margin"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_title">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <SearchView
+                        android:searchIcon="@drawable/ic_search"
+                        android:layout_centerVertical="true"
+                        android:isScrollContainer="false"
+                        android:id="@+id/searchView"
+                        android:layout_width="@dimen/search_view_width"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white" />
+
+                    <ImageButton
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="4dp"
+                        android:layout_alignEnd="@+id/searchView"
+                        android:src="@drawable/ic_search"
+                        android:backgroundTint="@color/green"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end" />
+
+                    <ImageButton
+                        android:tint="@color/black"
+                        android:backgroundTint="@color/white"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:id="@+id/qr_code_button"
+                        android:layout_width="@dimen/qr_button_width"
+                        android:layout_height="@dimen/qr_button_height"
+                        android:src="@drawable/ic_baseline_qr_code_24" />
+
+                </RelativeLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_catalog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/simple_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_list_catalog" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/simple_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:text="@string/limited_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/simple_text_size" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_limited_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_limited" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/simple_margin"
+            android:layout_marginTop="@dimen/large_margin"
+            android:text="@string/best_price_text"
+            android:textColor="@color/black"
+            android:textSize="@dimen/simple_text_size" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_best_price_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/large_margin"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/list_item_limited" />
+
+    </LinearLayout>
+
+</ScrollView>
